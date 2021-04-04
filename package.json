@@ -1,0 +1,24 @@
+{
+  "name": "coding_challenges",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "npm run test -- --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShaneUP1/coding_challenges.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShaneUP1/coding_challenges/issues"
+  },
+  "homepage": "https://github.com/ShaneUP1/coding_challenges#readme",
+  "dependencies": {
+    "eslint": "^7.23.0",
+    "jest": "^26.6.3"
+  }
+}
