@@ -10,18 +10,18 @@ describe('Kids With the Greatest Number of Candies', () => {
         // Kid 4 has 1 candy and even if he or she receives all extra candies will only have 4 candies. 
         // Kid 5 has 3 candies and if he or she receives at least 2 extra candies will have the greatest number of candies among the kids. 
         const expected1 = [true, true, true, false, true];
-        const actual1 = shuffle([2, 3, 5, 1, 3], 3);
+        const actual1 = kidsWithCandies([2, 3, 5, 1, 3], 3);
 
         expect(actual1).toEqual(expected1);
 
         // Explanation: There is only 1 extra candy, therefore only kid 1 will have the greatest number of candies among the kids regardless of who takes the extra candy.
         const expected2 = [true, false, false, false, false];
-        const actual2 = shuffle([4, 2, 1, 1, 2], 1);
+        const actual2 = kidsWithCandies([4, 2, 1, 1, 2], 1);
 
         expect(actual2).toEqual(expected2);
 
         const expected3 = [true, false, true];
-        const actual3 = shuffle([12, 1, 12], 10);
+        const actual3 = kidsWithCandies([12, 1, 12], 10);
 
         expect(actual3).toEqual(expected3);
     });
