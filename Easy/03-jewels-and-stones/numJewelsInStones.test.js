@@ -1,7 +1,7 @@
 const { numJewelsInStones } = require('./numJewelsInStones');
 
 describe('numJewelsInStones fn', () => {
-    it('takes in 2 strings, jewels and stones respectively, and return an integer describing how many total jewels are found in the stones', () => {
+    it.only('takes in 2 strings, jewels and stones respectively, and return an integer describing how many total jewels are found in the stones', () => {
         const expected1 = 3;
         const actual1 = numJewelsInStones('aA', 'aAAbbbb');
 
