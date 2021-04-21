@@ -9,31 +9,33 @@
 function nearestValidPoint(x, y, points) {
   let index = -1;
   let minimum = Infinity;
-  // iterate through the points arrays
-  for (let i = 0; i < points.length; i++) {
-    let point = points[i];
-    //1. for each subarray of points verify that it shares either the same x or y coordinate
-    if (point[0] === x || point[1] === y) {
-      //2. compute the Manhattan distance of the points
-      let manhattan = Math.abs(x - point[0]) + Math.abs(y - point[1]);
+
+  points.forEach(([a, b], i) => {
+    if (a === x || b === y) {
+      let manhattan = Math.abs(x - a) + Math.abs(y - b);
       if (manhattan < minimum) {
-        minimum = manhattan;
         index = i;
+        minimum = manhattan;
       }
     }
-  }
-  return minimum;
+  });
 
-  // points.forEach(([a, b], i) => {
-  //   if (a === x || b === y) {
-  //     const distance = Math.abs(x - a) + Math.abs(y - b)
-  //     if (distance < min) {
-  //       idx = i
-  //       min = distance
+  return index;
+
+  // iterate through the points arrays
+  // NEED TO USE FOR EACH? WHY?
+  // for (let i = 0; i < points.length; i++) {
+  //   let point = points[i];
+  //   //1. for each subarray of points verify that it shares either the same x or y coordinate
+  //   if (point[0] === x || point[1] === y) {
+  //     //2. compute the Manhattan distance of the points
+  //     let manhattan = Math.abs(x - point[0]) + Math.abs(y - point[1]);
+  //     if (manhattan < minimum) {
+  //       minimum = manhattan;
+  //       index = i;
   //     }
   //   }
-  // })
-  // return idx;
+  // }
 
   //3. if the distance is the smallest found, record it and the index (if it's a tie for shortest distance, keep original and toss out latest)
   //repeat steps 1-3 for each of the subarrays
