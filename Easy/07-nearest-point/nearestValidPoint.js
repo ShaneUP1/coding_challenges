@@ -7,20 +7,20 @@
 // The Manhattan distance between two points (x1, y1) and (x2, y2) is abs(x1 - x2) + abs(y1 - y2).
 
 function nearestValidPoint(x, y, points) {
-  let index = -1;
-  let minimum = Infinity;
+    let index = -1;
+    let minimum = Infinity;
 
-  points.forEach(([a, b], i) => {
-    if (a === x || b === y) {
-      let manhattan = Math.abs(x - a) + Math.abs(y - b);
-      if (manhattan < minimum) {
-        index = i;
-        minimum = manhattan;
-      }
-    }
-  });
+    points.forEach(([a, b], i) => {
+        if (a === x || b === y) {
+            let manhattan = Math.abs(x - a) + Math.abs(y - b);
+            if (manhattan < minimum) {
+                index = i;
+                minimum = manhattan;
+            }
+        }
+    });
 
-  return index;
+    return index;
 
   // iterate through the points arrays
   // NEED TO USE FOR EACH? WHY?
@@ -44,5 +44,5 @@ function nearestValidPoint(x, y, points) {
 }
 
 module.exports = {
-  nearestValidPoint
+    nearestValidPoint
 };
