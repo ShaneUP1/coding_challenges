@@ -16,33 +16,36 @@
 class TreeNode {
     constructor(value) {
         this.value = value;
-        this.left = value.left;
-        this.right = value.right;
+        this.left = null;
+        this.right = null;
     }
-}
-
-function maxDepthHandler(root, num) {
-
 }
 
 function maxDepth(root) {
     //initialize a counter
-    // let counter = 0;
     // let current = this.node;
-    if (root == null) return 0;
+    if (root === null) {
+        return 0;
+    }
 
     //start at the root and check left and right
+    let nodeLeft = maxDepth(root.left) + 1;
+    
+    let nodeRight = maxDepth(root.right) + 1;
+
+    const result = nodeLeft > nodeRight ? nodeLeft : nodeRight;
+    return result;
+}
+
     //if you're able to go either or both, add 1 to your counter and traverse to the next node down
     // if (root.left || root.right) {
     //     counter++;
     //     // current = root;
     // }
     //repeat
-    return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
+    // return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
     //if you have both a left and a right you'll need to go back and make sure you traverse both directions to see which one goes deeper
     //return the counter
-    // return counter;
-}
 
 module.exports = {
     maxDepth,
