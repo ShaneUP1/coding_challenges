@@ -9,6 +9,11 @@
 // Return an array answer, where answer[j] is the answer to the jth query.
 
 function countPoints(points, queries) {
+  //iterate through all the points
+  //set a count array with same length of queries
+  //for each point check to see if it falls into each querie
+  //if it does add 1 to count array for that specific query index
+  //return the count array
 
 }
 

@@ -21,12 +21,12 @@ describe('maxDepth fxn', () => {
     
         expect(expected2).toEqual(actual2);
     
-        // const root3 = new TreeNode();
+        const root3 = undefined;
     
-        // const expected3 = 0;
-        // const actual3 = maxDepth(root3);
+        const expected3 = 0;
+        const actual3 = maxDepth(root3);
     
-        // expect(actual3).toEqual(expected3);
+        expect(actual3).toEqual(expected3);
     
         const root4 = new TreeNode(0);
     
