@@ -9,14 +9,29 @@
 // Return an array answer, where answer[j] is the answer to the jth query.
 
 function countPoints(points, queries) {
-  //iterate through all the points
-  //set a count array with same length of queries
-  //for each point check to see if it falls into each querie
-  //if it does add 1 to count array for that specific query index
-  //return the count array
+  //iterate through the queries
+    
+    return queries.map((query) => {  
+        //iterate through the points
+        const pointResults = points.map(point => {
+        
+            //(x-h)^2 + (y-k)^2 = r^2
+            const derivedRadius = Math.sqrt((point[0] - query[0]) ** 2 + (point[1] - query[1]) ** 2);
+            console.log(derivedRadius);
 
+            //we need to check that the point given returns a value equal to or smaller than the radius(r)
+            if (derivedRadius <= query[2]) {
+                return +1;
+            }
+            return 0;
+        });
+        //sum up the point results for each query
+        return pointResults.reduce((accumulator, current) => {
+            return accumulator += current;
+        }, 0);
+    });
 }
 
 module.exports = {
-  countPoints
+    countPoints
 };

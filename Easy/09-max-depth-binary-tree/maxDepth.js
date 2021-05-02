@@ -31,10 +31,8 @@ function maxDepth(root) {
     //we will add 1 in either case, right or left, because if the code gets to this point we know our depth is at least 1, meaning we at least have a root
     //then we use recursion to perform the same series of steps on all the children
     let nodeLeft = maxDepth(root.left) + 1;
-    console.log('nodeleft:', nodeLeft);
     
     let nodeRight = maxDepth(root.right) + 1;
-    console.log('noderight:', nodeRight);
 
     //this is how we check to find the deepest branch and return it
     const result = nodeLeft > nodeRight ? nodeLeft : nodeRight;
